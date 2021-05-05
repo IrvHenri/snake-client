@@ -5,6 +5,10 @@ const connect = function () {
 
     port: 50542,
   });
+  conn.on('connect',(msg)=>{
+    console.log('Successfully connected to game server')
+    conn.write('Name: IRV')
+  })
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
